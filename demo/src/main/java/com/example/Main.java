@@ -9,13 +9,12 @@ import java.util.Scanner;
 import javax.imageio.ImageIO;
 
 public class Main {
-    public static void main(String[] args) {
-        Banana b = new Banana(0,3);
-		b.Volume();
-		b.microsivertsPerInch();
-        System.out.printf("Ounces: %.2f\nMicrosiverts: %.2f",b.toOunce(), b.microsivertsPerInch());
 
     public static void main(String[] args) throws IOException {
+        Banana b = new Banana(0, 3);
+        b.Volume();
+        b.microsivertsPerInch();
+        System.out.printf("Ounces: %.2f\nMicrosiverts: %.2f", b.toOunce(), b.microsivertsPerInch());
         System.out.printf("%f", Banana.Volume(-3, 3));
         String imageName = null;
         Scanner scanner = new Scanner(System.in);
