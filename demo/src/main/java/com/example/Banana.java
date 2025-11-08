@@ -15,7 +15,7 @@ public class Banana{
      * Gets the radius.
      */
     public static double getR(double x){
-        return (1/2) * ((.1 * x * x) - (Math.pow(1.2,x) - 1));
+        return (1/2) * (((.1/3) * Math.pow(x,3)) - (((.1/3) * Math.pow(x,3)) - (2 * x)));
     }
 
     /**
