@@ -11,11 +11,8 @@ import javax.imageio.ImageIO;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Banana b = new Banana(0, 3);
-        b.Volume();
-        b.microsivertsPerInch();
-        System.out.printf("Ounces: %.2f\nMicrosiverts: %.2f", b.toOunce(), b.microsivertsPerInch());
-        System.out.printf("%f", Banana.Volume(-3, 3));
+        Banana b = new Banana(3);
+        b.printBananaAttributes();
         String imageName = null;
         Scanner scanner = new Scanner(System.in);
         while (imageName == null) {
@@ -25,5 +22,5 @@ public class Main {
         scanner.close();
         System.out.println(BananaImage.isBanana(image, imageName));
 
-    
+    }  
 }
