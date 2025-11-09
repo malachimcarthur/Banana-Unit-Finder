@@ -81,7 +81,7 @@ public class Banana {
 	 */
 	public void printBananaAttributes() {
 		System.out.printf(
-				"Banana Length: %fin.\nWeight in ounces: %foz\nBanana Volume: %fin^3\nMicrosiverts Per Inch: %fSv\nBananas Across Football Field: %fbananas\nBananas could fit in an oil barrel: %fbananas",
+				"Banana Length: %fin.\nWeight in ounces: %foz\nBanana Volume: %fin^3\nMicrosiverts Per Inch: %fSv\nBananas Across Football Field: %f bananas\nBananas could fit in an oil barrel: %f bananas",
 				lengthOfBanana(),
 				toOunce(),
 				this.sizeCubicInch,
