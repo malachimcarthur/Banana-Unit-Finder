@@ -19,9 +19,9 @@ public class BananaImage {
 
     /**
      * Determines if a given photo is a banana.
-     * @param image the buffered image.
-     * @param imageName the name of the image.
-     * @return true if it is a banana, false if not.
+     * @param image The buffered image.
+     * @param imageName The name of the image.
+     * @return True if it is a banana, false if not.
      * @author Malahci
      */
     public static boolean isBanana(BufferedImage image, String imageName) {
@@ -62,7 +62,6 @@ public class BananaImage {
                 System.out.println("did not work");
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         int length = lastX - firstX;
@@ -72,9 +71,9 @@ public class BananaImage {
 
     /**
      * Gets the user input on the photo to select.
-     * @param scanner a scanner 
-     * @return the nameof the picture chosen.
-     * @author Malahci
+     * @param scanner A scanner .
+     * @return The name of the picture chosen.
+     * @author Malahci.
      */
     public static String choosePicture(Scanner scanner) {
         String[] files;
