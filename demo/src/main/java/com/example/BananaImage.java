@@ -17,7 +17,6 @@ import javax.imageio.ImageIO;
 public class BananaImage {
 
     public static int bananaDimensions(BufferedImage oldImage, String imageName) {
-        System.out.println(oldImage.getWidth() + ", " + oldImage.getHeight());
         int imageHeight = 3024;
         int imageWidth = 4032;
         BufferedImage image;
@@ -40,18 +39,21 @@ public class BananaImage {
                 float hue = hsb[0];
                 float saturation = hsb[1];
                 float brightness = hsb[2];
-                if (hue > BananaConstants.HUE_LOWER_BOUND && hue < BananaConstants.HUE_UPPER_BOUND
-                        && saturation > BananaConstants.SATURATION
-                        && brightness > BananaConstants.BRIGHTNESS) {
+                if (pixelCheck(hue, saturation, brightness)) {
 
                     if (firstX == -1) {
                         firstX = x;
                     }
                     lastX = x;
-                    int length = lastX - firstX;
-                    if (length > longestX) {
-                        longestX = length;
+                    int lengthX = lastX - firstX;
+                    if (lengthX > longestX) {
+                        longestX = lengthX;
                     }
+                    if (firstY == -1) {
+                        firstY = y;
+                    }
+                    lastY = y;
+                    longestY = lastY - firstY;
 
                     image.setRGB(x, y, Color.MAGENTA.getRGB());
                 } else {
@@ -59,19 +61,28 @@ public class BananaImage {
                 }
             }
         }
-        File outputFile = new File("demo\\src\\main\\java\\com\\example\\bananaImagesProcessed\\" + imageName);
+
+        writeProcessedImage(imageName, image);
+
+        return Math.max(longestX, longestY);
+    }
+
+    private static boolean pixelCheck(float hue, float saturation, float brightness) {
+        return hue > BananaConstants.HUE_LOWER_BOUND && hue < BananaConstants.HUE_UPPER_BOUND
+                && saturation > BananaConstants.SATURATION
+                && brightness > BananaConstants.BRIGHTNESS;
+    }
+
+    private static void writeProcessedImage(String imageName, BufferedImage image) {
         try {
+            File outputFile = new File("demo\\src\\main\\java\\com\\example\\bananaImagesProcessed\\" + imageName);
             if (!ImageIO.write(image, "jpg", outputFile)) {
-                System.out.println("did not work");
+                System.out.println("Something went wrong in processing the image.");
             }
         } catch (IOException e) {
 
             e.printStackTrace();
         }
-
-        int realLength = Math.max(longestX, longestY);
-
-        return realLength;
     }
 
     private static float[] getHsb(BufferedImage image, int x, int y) {

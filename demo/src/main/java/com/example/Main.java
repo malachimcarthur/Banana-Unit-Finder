@@ -26,7 +26,6 @@ public class Main {
         scanner.close();
         int bananaPixels = BananaImage.bananaDimensions(image, imageName);
         Banana b = new Banana(bananaPixels);
-        System.out.println(bananaPixels);
         b.printBananaAttributes();
 
     }
