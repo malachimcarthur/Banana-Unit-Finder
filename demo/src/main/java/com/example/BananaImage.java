@@ -156,7 +156,7 @@ public class BananaImage {
     }
 
     /**
-     * Standardizes the width and hight of the given image.
+     * Standardizes the width and height of the given image.
      * @param image
      * @param newHeight
      * @param newWidth

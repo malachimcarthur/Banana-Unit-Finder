@@ -63,14 +63,14 @@ public class Banana {
 	 * @return The amount of bananas needed to match the lengtnh of a football field.
 	 */
 	public double bananaToFootballField() {
-		return BananaConstants.INCH_TO_FOOTBALL_FIELD / this.length;
+		return BananaConstants.FOOTBALL_FIELD_TO_INCH / this.length;
 	}
 
 	/**
 	 * @return The amount of bananas needed to fill an oil barrel.
 	 */
 	public double bananaToOilbarrel() {
-		return BananaConstants.CUBIC_INCH_TO_OILBARREL / this.sizeCubicInch;
+		return BananaConstants.OILBARREL_TO_CUBIC_INCH / this.sizeCubicInch;
 	}
 
 	/**
