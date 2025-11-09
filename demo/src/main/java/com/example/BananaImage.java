@@ -3,8 +3,6 @@ package com.example;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -25,26 +23,10 @@ public class BananaImage {
         BufferedImage image;
         boolean flip = false;
         if (oldImage.getWidth() < oldImage.getHeight()) {
-            flip = true;
+            imageHeight = imageWidth;
+            imageWidth = 4032;
         }
         image = StandardizedImage(oldImage, imageHeight, imageWidth, flip);
-
-    public BananaImage(BufferedImage image) {
-
-    }
-
-    /**
-     * Determines if a given photo is a banana.
-     * 
-     * @param image     The buffered image.
-     * @param imageName The name of the image.
-     * @return True if it is a banana, false if not.
-     * @author Malahci
-     */
-    public static boolean isBanana(BufferedImage image, String imageName) {
-        int imageWidth = image.getWidth();
-        int imageHeight = image.getHeight();
-        boolean isBanana = false;
         int firstX = -1;
         int lastX = -1;
         int longestX = -1;
@@ -83,7 +65,7 @@ public class BananaImage {
                 System.out.println("did not work");
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
         }
 
@@ -108,7 +90,7 @@ public class BananaImage {
      * 
      * @param scanner A scanner .
      * @return The name of the picture chosen.
-     * @author Malahci.
+     * @author Malachi.
      */
     public static String choosePicture(Scanner scanner) {
         String[] files;
@@ -134,13 +116,6 @@ public class BananaImage {
     }
 
     private static BufferedImage StandardizedImage(BufferedImage image, int newHeight, int newWidth, boolean flip) {
-        if (flip) {
-            // Flip the image horizontally
-            AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
-            tx.translate(-image.getWidth(null), 0);
-            AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
-            image = op.filter(image, null);
-        }
         BufferedImage newImage = new BufferedImage(newWidth, newHeight, image.getType());
         Graphics2D g2d = newImage.createGraphics();
         g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR); // For
