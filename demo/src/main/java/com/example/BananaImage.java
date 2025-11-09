@@ -20,6 +20,7 @@ public class BananaImage {
 
     /**
      * Finds the length of the longest continuous line form the image, y or x.
+     * 
      * @param oldImage
      * @param imageName
      * @return The length of the longest continuous line.
@@ -77,6 +78,7 @@ public class BananaImage {
 
     /**
      * Determines if the attribues of the given pixel are within a specific range.
+     * 
      * @param hue
      * @param saturation
      * @param brightness
@@ -90,6 +92,7 @@ public class BananaImage {
 
     /**
      * Writes the processed image to a new file.
+     * 
      * @param imageName
      * @param image
      */
@@ -108,6 +111,7 @@ public class BananaImage {
 
     /**
      * Finds the hsb value of the pixel given by the image at a (x,y) position.
+     * 
      * @param image
      * @param x
      * @param y
@@ -156,7 +160,8 @@ public class BananaImage {
     }
 
     /**
-     * Standardizes the width and height of the given image.
+     * Standardizes the pixel width and height of the given image.
+     * 
      * @param image
      * @param newHeight
      * @param newWidth
@@ -166,7 +171,7 @@ public class BananaImage {
     private static BufferedImage StandardizedImage(BufferedImage image, int newHeight, int newWidth, boolean flip) {
         BufferedImage newImage = new BufferedImage(newWidth, newHeight, image.getType());
         Graphics2D g2d = newImage.createGraphics();
-        g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR); 
+        g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
         g2d.drawImage(image, 0, 0, newWidth, newHeight, null);
         g2d.dispose();
         return newImage;

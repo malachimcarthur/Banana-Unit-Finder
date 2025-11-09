@@ -60,7 +60,8 @@ public class Banana {
 	}
 
 	/**
-	 * @return The amount of bananas needed to match the lengtnh of a football field.
+	 * @return The amount of bananas needed to match the lengtnh of a football
+	 *         field.
 	 */
 	public double bananaToFootballField() {
 		return BananaConstants.FOOTBALL_FIELD_TO_INCH / this.length;
@@ -78,7 +79,7 @@ public class Banana {
 	 */
 	public void printBananaAttributes() {
 		System.out.printf(
-				"Banana Length: %fin.\nWeight in ounces: %foz\nBanana Volume: %fin^3\nMicrosiverts Per Inch: %fSv\nBananas Across Football Field: %f bananas\nBananas could fit in an oil barrel: %f bananas",
+				"Banana Length: %fin.\nWeight in ounces: %foz\nBanana Volume: %fin^3\nMicrosieverts Per Inch^3: %fSv\nBananas Across Football Field: %f bananas\nBananas could fit in an oil barrel: %f bananas",
 				lengthOfBanana(),
 				toOunce(),
 				this.sizeCubicInch,
