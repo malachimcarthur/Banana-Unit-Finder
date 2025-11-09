@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
 /**
  * A set of function to process the image. Assumes camera is 10 inch from the
  * surface with a 55mm lense.
+ * @author Malachi
  */
 public class BananaImage {
 
